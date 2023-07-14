@@ -1,4 +1,4 @@
-import kotlin.math.min
+import kotlin.math.max
 
 fun main(args: Array<String>) {
     var amount: Int = 100
@@ -15,7 +15,7 @@ fun fee(
     (cartType == "VKPay") && isInLimit("VKPay", amountCurMonth, amountThis) -> 0
 
     (cartType == "Visa") || (cartType == "Mir") &&
-            isInLimit("", amountCurMonth, amountThis) -> min((amountThis * 0.01 * 0.75).toInt(), 35)
+            isInLimit("", amountCurMonth, amountThis) -> max((amountThis * 0.01 * 0.75).toInt(), 35)
 
     ((cartType == "MasterCard") || (cartType == "Maestro")) &&
             (amountCurMonth + amountThis in 300..75_000) &&
