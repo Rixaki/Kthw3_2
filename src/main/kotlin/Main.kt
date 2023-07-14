@@ -24,7 +24,7 @@ fun fee(
     (cartType == "MasterCard") || (cartType == "Maestro") &&
             isInLimit("", amountCurMonth, amountThis) -> (amountThis * 0.01 * 0.6 + 20).toInt()
 
-    else -> -1
+    else -> -2
 }
 
 fun isInLimit(
